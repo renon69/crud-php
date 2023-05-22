@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
 
     if ($stmt->fetchColumn() > 0) {
         // Show rejection message
-        echo "Email or name already exists. Please choose a different email or name.";
+        
         echo "<script>
                 setTimeout(function() {
                     var errorMessage = document.getElementById('error-message');
