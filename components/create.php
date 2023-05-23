@@ -39,7 +39,13 @@ if (isset($_POST['submit'])) {
             // Execute the statement
             $stmt->execute();
 
-            echo "New record created successfully";
+            echo "New record created successfully.";
+
+echo '<script>
+    setTimeout(function(){
+        window.location.href = "create.php";
+    }, 2000); // 2 seconds
+</script>';
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
@@ -69,7 +75,7 @@ if (isset($_POST['submit'])) {
             <input type="submit" name="submit" value="Submit">
         </fieldset>
     </form>
-    <div id="error-message" style="display: none; color: red;">Email or name already exists. Please choose a different email or name.</div>
+    
     <script>
         var errorMessage = document.getElementById('error-message');
         if (errorMessage) {
